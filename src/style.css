@@ -1,0 +1,92 @@
+/* html,
+body,
+*,
+*::before,
+*::after {
+  background-color: transparent;
+} */
+
+/* body {
+  background-color: rgba(231, 249, 247, 1);
+} */
+
+.svg {
+  position: absolute;
+  cursor: pointer;
+}
+
+.unsaved {
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+}
+
+.saved {
+  top: 13px;
+  right: 13px;
+  width: 40px;
+  height: 40px;
+}
+
+.saved .st0 {
+  fill: white;
+}
+
+.saved .st1 {
+  fill: white;
+}
+
+.saved .st2 {
+  opacity: 0.2;
+}
+
+.saved .st3 {
+  fill: #c75c5c;
+}
+
+.saved:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(0.9);
+}
+
+.saved:hover path {
+  transition: fill 0.3s ease-in-out;
+  fill: lightgray;
+}
+
+.saved:hover .st0 {
+  transition: fill 0.3s ease-in-out;
+  fill: white;
+}
+
+.unsaved .st0 {
+  fill: white;
+}
+
+.unsaved .st1 {
+  fill: white;
+}
+
+.unsaved .st2 {
+  opacity: 0.2;
+}
+
+.unsaved .st3 {
+  fill: lightgray;
+}
+
+.unsaved:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.unsaved:hover path {
+  transition: fill 0.3s ease-in-out;
+  fill: #c75c5c;
+}
+
+.unsaved:hover .st0 {
+  transition: fill 0.3s ease-in-out;
+  fill: white;
+}
