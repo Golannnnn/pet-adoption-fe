@@ -19,8 +19,6 @@ const Signup = () => {
   const { isLoggedIn, signUp, loading, handleGoogleLogin } =
     useContext(AuthContext);
 
-  console.log("rendering Signup");
-
   useEffect(() => {
     if (isLoggedIn) {
       navigate("/profile");
@@ -40,8 +38,6 @@ const Signup = () => {
   const onSubmit = async (data) => {
     signUp(data);
   };
-
-  console.log("rendering Signup");
 
   return (
     <Center layerStyle="formCenter">

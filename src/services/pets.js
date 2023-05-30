@@ -1,7 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3001/pets";
-
-//TODO: change routes to resemble instructions
+const baseUrl = `${import.meta.env.VITE_BACKEND_URL}/pets`;
 
 const getAll = async () => {
   const response = await axios.get(baseUrl);

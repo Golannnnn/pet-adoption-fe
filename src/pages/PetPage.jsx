@@ -1,7 +1,5 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
-import petService from "../services/pets";
-import userService from "../services/users";
+import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {
   Center,
   Button,
@@ -15,7 +13,6 @@ import {
   HStack,
   useDisclosure,
 } from "@chakra-ui/react";
-import { ChevronLeftIcon } from "@chakra-ui/icons";
 import {
   BsFillEmojiHeartEyesFill,
   BsFillEmojiSmileFill,
@@ -24,18 +21,13 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { PetContext } from "../context/PetContext";
-import useToastService from "../hooks/useToastService";
 import MyAlert from "../components//MyAlert";
 import SaveHeart from "../components/SaveHeart";
 import BackButton from "../components/BackButton";
 
-//when clicking on adopt, change adoptedBy field in pet to user id and push pet id to user's adoptedPets array
-//make two functions, one for changing adoptedBy field and one for pushing pet id to user's adoptedPets array
-
 const PetPage = () => {
   const { petId } = useParams();
   const [pet, setPet] = useState(null);
-  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const { pets, changePetStatus, loading } = useContext(PetContext);
   const {
@@ -43,8 +35,6 @@ const PetPage = () => {
     onClose,
     onOpen,
   } = useDisclosure({ defaultIsOpen: false });
-
-  console.log("rendering PetPage");
 
   useEffect(() => {
     if (pets) {
@@ -86,7 +76,7 @@ const PetPage = () => {
         mx={5}
         mb={10}
         mt={{
-          base: 10,
+          base: 5,
           md: 0,
         }}
       >
@@ -177,15 +167,21 @@ const PetPage = () => {
               <Divider />
               <Flex>
                 {!user ? (
-                  <Text>
+                  <Text
+                    fontSize={{
+                      md: "xl",
+                      lg: "2xl",
+                      base: "xl",
+                    }}
+                  >
                     <Link
                       to="/users/signin"
                       style={{
                         color: "#3182ce",
                       }}
                     >
-                      Login
-                    </Link>{" "}
+                      Login{" "}
+                    </Link>
                     or{" "}
                     <Link
                       to="/users/signup"
@@ -193,8 +189,8 @@ const PetPage = () => {
                         color: "#3182ce",
                       }}
                     >
-                      Signup
-                    </Link>{" "}
+                      Signup{" "}
+                    </Link>
                     to adopt or foster {pet.name}.
                   </Text>
                 ) : pet.status === "available" ? (

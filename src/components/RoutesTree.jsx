@@ -17,7 +17,6 @@ import UserList from "../pages/UserList";
 import AddPet from "../pages/AddPet";
 
 const RoutesTree = () => {
-  console.log("rendering RoutesTree");
   return (
     <Routes>
       <Route index element={<Homepage />} />

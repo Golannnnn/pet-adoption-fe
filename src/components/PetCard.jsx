@@ -14,8 +14,6 @@ import { Link } from "react-router-dom";
 import SaveHeart from "./SaveHeart";
 import React from "react";
 
-//TODO: put styles in a separate file
-
 const PetCard = React.memo(({ pet }) => {
   return (
     <Card layerStyle="card">

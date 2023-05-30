@@ -19,8 +19,6 @@ const Signin = () => {
     useContext(AuthContext);
   let navigate = useNavigate();
 
-  console.log("rendering Signin");
-
   const {
     register,
     formState: { errors, isValid },
@@ -39,8 +37,6 @@ const Signin = () => {
   const onSubmit = async (data) => {
     signIn(data);
   };
-
-  console.log("rendering Signin");
 
   return (
     <Center layerStyle="formCenter">

@@ -45,7 +45,7 @@ body,
   fill: #c75c5c;
 }
 
-.saved:hover {
+/* .saved:hover {
   transition: transform 0.2s ease-in-out;
   transform: scale(0.9);
 }
@@ -58,7 +58,7 @@ body,
 .saved:hover .st0 {
   transition: fill 0.3s ease-in-out;
   fill: white;
-}
+} */
 
 .unsaved .st0 {
   fill: white;
@@ -76,7 +76,7 @@ body,
   fill: lightgray;
 }
 
-.unsaved:hover {
+/* .unsaved:hover {
   transition: transform 0.2s ease-in-out;
   transform: scale(1.1);
 }
@@ -89,4 +89,4 @@ body,
 .unsaved:hover .st0 {
   transition: fill 0.3s ease-in-out;
   fill: white;
-}
+} */

@@ -57,8 +57,6 @@ const UserPage = () => {
     lg: true,
   });
 
-  console.log(userWithPets);
-
   return (
     <>
       <BackButton />

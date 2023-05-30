@@ -1,4 +1,10 @@
-import { Flex, Heading, Button, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Button,
+  useBreakpointValue,
+  Text,
+} from "@chakra-ui/react";
 import header from "../assets/header.png";
 import { FaPaw, FaUserCircle } from "react-icons/fa";
 import { TiUserAdd } from "react-icons/ti";
@@ -14,8 +20,6 @@ const Homepage = () => {
   const { user } = useContext(AuthContext);
   const isMobile = useBreakpointValue({ base: true, md: false });
 
-  console.log("rendering Homepage");
-
   const buttonStyles = {
     bg: "#F6C391",
     color: "black",
@@ -23,6 +27,21 @@ const Homepage = () => {
       bg: "darkcyan",
       color: "white",
     },
+    width: isMobile && "280px",
+    py: isMobile && 8,
+  };
+
+  const textButtonStyles = {
+    fontSize: {
+      sm: "xl",
+      md: "lg",
+      base: "xl",
+    },
+    pl: isMobile && 2,
+  };
+
+  const iconStyles = {
+    size: isMobile && "25px",
   };
 
   return (
@@ -55,7 +74,7 @@ const Homepage = () => {
               base: "lg",
             }}
             pt={10}
-            pb={0}
+            pb={isMobile && 1}
             borderRadius={10}
             fontWeight="regular"
             color="#4F4F4F"
@@ -94,24 +113,46 @@ const Homepage = () => {
             {user ? (
               <>
                 <NavLink to="/search">
-                  <Button {...buttonStyles} rightIcon={<FaPaw />}>
-                    View our pets
+                  <Button
+                    {...buttonStyles}
+                    rightIcon={!isMobile && <FaPaw {...iconStyles} />}
+                    justifyContent={isMobile && "space-between"}
+                  >
+                    <Text {...textButtonStyles}>View our pets</Text>
+                    {isMobile && <FaPaw {...iconStyles} />}
                   </Button>
                 </NavLink>
                 <NavLink to="/users/mypets">
-                  <Button {...buttonStyles} rightIcon={<GiSittingDog />}>
-                    Manage your pets
+                  <Button
+                    {...buttonStyles}
+                    rightIcon={!isMobile && <GiSittingDog {...iconStyles} />}
+                    justifyContent={isMobile && "space-between"}
+                  >
+                    <Text {...textButtonStyles}>Manage your pets</Text>
+                    {isMobile && <GiSittingDog {...iconStyles} />}
                   </Button>
                 </NavLink>
                 <NavLink to="/users/profile">
-                  <Button {...buttonStyles} rightIcon={<FaUserCircle />}>
-                    View your profile
+                  <Button
+                    {...buttonStyles}
+                    rightIcon={!isMobile && <FaUserCircle {...iconStyles} />}
+                    justifyContent={isMobile && "space-between"}
+                  >
+                    <Text {...textButtonStyles}>View your profile</Text>
+                    {isMobile && <FaUserCircle {...iconStyles} />}
                   </Button>
                 </NavLink>
                 {user.isAdmin && (
                   <NavLink to="/admin/dashboard">
-                    <Button {...buttonStyles} rightIcon={<MdSpaceDashboard />}>
-                      Dashboard
+                    <Button
+                      {...buttonStyles}
+                      rightIcon={
+                        !isMobile && <MdSpaceDashboard {...iconStyles} />
+                      }
+                      justifyContent={isMobile && "space-between"}
+                    >
+                      <Text {...textButtonStyles}>Dashboard</Text>
+                      {isMobile && <MdSpaceDashboard {...iconStyles} />}
                     </Button>
                   </NavLink>
                 )}
@@ -119,23 +160,37 @@ const Homepage = () => {
             ) : (
               <>
                 <NavLink to="/users/signup">
-                  <Button {...buttonStyles} rightIcon={<TiUserAdd />}>
-                    Create an account
-                  </Button>
-                </NavLink>
-                {isMobile ? <GrLinkDown /> : <GrLinkNext />}
-                <NavLink to="/search">
-                  <Button {...buttonStyles} rightIcon={<FaPaw />}>
-                    View our pets
-                  </Button>
-                </NavLink>
-                {isMobile ? <GrLinkDown /> : <GrLinkNext />}
-                <NavLink to="/pets/64525ad7787d09c27ebe3bc2">
                   <Button
                     {...buttonStyles}
-                    rightIcon={<BsFillHouseHeartFill />}
+                    rightIcon={!isMobile && <TiUserAdd {...iconStyles} />}
+                    justifyContent={isMobile && "space-between"}
                   >
-                    Adopt a pet
+                    <Text {...textButtonStyles}>Create an account</Text>
+                    {isMobile && <TiUserAdd {...iconStyles} />}
+                  </Button>
+                </NavLink>
+                {!isMobile && <GrLinkNext />}
+                <NavLink to="/search">
+                  <Button
+                    {...buttonStyles}
+                    rightIcon={!isMobile && <FaPaw {...iconStyles} />}
+                    justifyContent={isMobile && "space-between"}
+                  >
+                    <Text {...textButtonStyles}>View our pets</Text>
+                    {isMobile && <FaPaw {...iconStyles} />}
+                  </Button>
+                </NavLink>
+                {!isMobile && <GrLinkNext />}
+                <NavLink to="/pets/6460b734815858363a21a3a5">
+                  <Button
+                    {...buttonStyles}
+                    rightIcon={
+                      !isMobile && <BsFillHouseHeartFill {...iconStyles} />
+                    }
+                    justifyContent={isMobile && "space-between"}
+                  >
+                    <Text {...textButtonStyles}>Adopt a pet</Text>
+                    {isMobile && <BsFillHouseHeartFill {...iconStyles} />}
                   </Button>
                 </NavLink>
               </>

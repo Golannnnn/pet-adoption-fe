@@ -4,10 +4,10 @@ const useToastService = () => {
   const toast = useToast();
 
   const position = useBreakpointValue({
-    sm: "top",
-    // md: "top",
-    // lg: "bottom-right",
-    base: "top",
+    sm: "bottom",
+    md: "bottom",
+    lg: "bottom-right",
+    base: "bottom",
   });
 
   const displayToast = (status, description) => {

@@ -15,6 +15,8 @@ export const AuthProvider = ({ children }) => {
   const { displayToast } = useToastService();
 
   useEffect(() => {
+    localStorage.removeItem("currentPage");
+    localStorage.removeItem("filteredPets");
     getUser();
   }, []);
 
@@ -73,8 +75,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signOut = () => {
-    localStorage.removeItem("google_token");
-    localStorage.removeItem("token");
+    if (localStorage.getItem("google_token")) {
+      googleLogout();
+      localStorage.removeItem("google_token");
+    }
+
+    if (localStorage.getItem("token")) {
+      localStorage.removeItem("token");
+    }
+
     setUser(null);
     setIsLoggedIn(false);
     displayToast("success", "Logged out successfully.");
@@ -145,10 +154,6 @@ export const AuthProvider = ({ children }) => {
     },
   });
 
-  // const handleGoogleLogout = () => {
-  //   googleLogout();
-  // };
-
   const values = {
     user,
     users,
@@ -160,10 +165,7 @@ export const AuthProvider = ({ children }) => {
     signUp: (data) => handleAuthentication(data, userService.create),
     updateUser,
     handleGoogleLogin,
-    // handleGoogleLogout,
   };
-
-  console.log("rendering AuthContext");
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

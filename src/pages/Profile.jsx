@@ -1,4 +1,3 @@
-// import { useAuth } from "../components/AuthContext";
 import {
   Flex,
   Center,
@@ -13,13 +12,8 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
-//TODO: add option to change email
-//TODO: add option to upload profile picture
-
 const Profile = () => {
   const { user, updateUser, loading } = useContext(AuthContext);
-
-  console.log("rendering Profile");
 
   const {
     register,
@@ -44,13 +38,13 @@ const Profile = () => {
   };
 
   return (
-    <Center layerStyle="formCenter">
+    <Center layerStyle="formCenter" pt={5}>
       <Flex flexDir="column" align="center" justify="center">
         <Flex align="center" justify="center">
           <Avatar
             alt="pet"
             size={{
-              base: "xl",
+              base: "lg",
               md: "xl",
             }}
             mr={5}

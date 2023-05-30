@@ -4,7 +4,8 @@ const formCenter = {
   //   md: 10,
   //   base: 7,
   // },
-  p: 7,
+  py: 7,
+  px: 5,
 };
 
 const formFlex = {
@@ -12,15 +13,10 @@ const formFlex = {
   alignItems: "center",
   justifyContent: "center",
   width: {
-    xs: "300px",
-    sm: "400px",
-    base: "300px",
+    xs: "100%",
+    sm: "100%",
+    base: "100%",
   },
-  // p: {
-  //   sm: 5,
-  //   md: 10,
-  //   base: 5,
-  // },
   p: 5,
   mt: 10,
   border: "1px solid lightgrey",

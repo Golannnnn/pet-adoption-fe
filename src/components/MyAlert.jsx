@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 
 const MyAlert = ({ name, status, onClose }) => {
-  console.log("rendering MyAlert");
   return (
     <Alert status={status === "available" ? "info" : "success"}>
       <AlertIcon />

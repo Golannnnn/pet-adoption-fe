@@ -76,9 +76,10 @@ const AddPet = () => {
       <Center
         mb={10}
         mt={{
-          base: 10,
+          base: 5,
           md: 0,
         }}
+        px={5}
       >
         <Flex flexDir="column" align="center" justify="center">
           <Heading
@@ -93,10 +94,9 @@ const AddPet = () => {
           <Flex
             layerStyle="formFlex"
             width={{
-              xs: "300px",
-              sm: "400px",
-              md: "500px",
-              base: "300px",
+              xs: "100%",
+              sm: "100%",
+              base: "100%",
             }}
           >
             <form

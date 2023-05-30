@@ -12,6 +12,8 @@ export const PetProvider = ({ children }) => {
   const { displayToast } = useToastService();
 
   useEffect(() => {
+    localStorage.removeItem("currentPage");
+    localStorage.removeItem("filteredPets");
     getPets();
   }, []);
 
@@ -126,8 +128,6 @@ export const PetProvider = ({ children }) => {
       setLoading(false);
     }
   };
-
-  console.log("rendering SaveHeartProvider");
 
   return (
     <PetContext.Provider

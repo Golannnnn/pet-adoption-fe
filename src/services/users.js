@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3001/users";
+const baseUrl = `${import.meta.env.VITE_BACKEND_URL}/users`;
 
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
@@ -14,8 +14,6 @@ axios.interceptors.request.use((config) => {
   }
   return config;
 });
-
-//TODO: change routes to resemble instructions
 
 const create = async (newUser) => {
   const response = await axios.post(`${baseUrl}/signup`, newUser);

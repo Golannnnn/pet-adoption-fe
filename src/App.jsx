@@ -7,8 +7,6 @@ import { PetProvider } from "./context/PetContext";
 const App = () => {
   const { loading } = useContext(AuthContext);
 
-  console.log("rendering App");
-
   return (
     <PetProvider>
       {!loading && (

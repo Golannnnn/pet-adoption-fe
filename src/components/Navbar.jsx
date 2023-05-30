@@ -31,7 +31,6 @@ const Navbar = () => {
   const btnRef = useRef();
 
   const { user, signOut } = useContext(AuthContext);
-  console.log("rendering Navbar");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -57,7 +56,7 @@ const Navbar = () => {
                 placement="left"
                 onClose={onClose}
                 finalFocusRef={btnRef}
-                size="200px"
+                size="xs"
               >
                 <DrawerOverlay />
                 <DrawerContent>
@@ -128,11 +127,11 @@ const Navbar = () => {
                 <Flex align="center">
                   <TbDog
                     style={{
-                      fontSize: "40px",
+                      fontSize: "30px",
                       color: "#9C4221",
                     }}
                   />
-                  <Text layerStyle="navbarLogo">
+                  <Text layerStyle="navbarLogo" fontSize="lg">
                     <span
                       style={{
                         color: "#9C4221",
@@ -242,7 +241,7 @@ const Navbar = () => {
             ) : (
               <>
                 <NavLink to="/users/signin">
-                  <Button mr={3}>Login</Button>
+                  <Button mr={isMobile ? 0 : 2}>Login</Button>
                 </NavLink>
                 {!isMobile && (
                   <NavLink to="/users/signup">

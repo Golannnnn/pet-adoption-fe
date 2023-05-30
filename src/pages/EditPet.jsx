@@ -19,6 +19,7 @@ import {
   FormLabel,
   Image,
   Avatar,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
@@ -36,6 +37,7 @@ const EditPet = () => {
   const [file, setFile] = useState();
   const { pets, editPet, loading } = useContext(PetContext);
   const navigate = useNavigate();
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   useEffect(() => {
     if (pets) {
@@ -119,16 +121,17 @@ const EditPet = () => {
       <Center
         mb={10}
         mt={{
-          base: 10,
+          base: 5,
           md: 0,
         }}
+        px={5}
       >
         <Flex flexDir="column" align="center" justify="center">
           <Flex align="center" justify="center">
             <Avatar
               src={file ? URL.createObjectURL(file) : pet?.picture}
               alt="pet"
-              size="xl"
+              size={isMobile ? "lg" : "xl"}
               mr={5}
             />
             <Heading
@@ -148,10 +151,9 @@ const EditPet = () => {
           <Flex
             layerStyle="formFlex"
             width={{
-              xs: "300px",
-              sm: "400px",
-              md: "500px",
-              base: "300px",
+              xs: "100%",
+              sm: "100%",
+              base: "100%",
             }}
           >
             <form

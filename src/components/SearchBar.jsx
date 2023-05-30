@@ -11,16 +11,11 @@ import {
   Stack,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { FaSearch } from "react-icons/fa";
 
 const SearchBar = ({ handleInputText, handleSearchSubmit, loading }) => {
-  console.log("rendering SearchBar");
-
   const { isOpen, onToggle } = useDisclosure();
 
   const isMobile = useBreakpointValue({ base: true, md: false });
-
-  // FaSearch
 
   return (
     <>
@@ -40,6 +35,9 @@ const SearchBar = ({ handleInputText, handleSearchSubmit, loading }) => {
             <option value="any">Any</option>
             <option value="dog">Dogs</option>
             <option value="cat">Cats</option>
+            <option value="bird">Birds</option>
+            <option value="rabbit">Rabbits</option>
+            <option value="hamster">Hamsters</option>
           </Select>
         )}
         <Input
@@ -62,7 +60,7 @@ const SearchBar = ({ handleInputText, handleSearchSubmit, loading }) => {
           Search
         </Button>
       </Flex>
-      <Flex mt={5} flexDir="column" align="center" justify="center">
+      <Flex mt={10} flexDir="column" align="center" justify="center">
         <Flex justify="center" align="center">
           <Text fontWeight={500}>Advanced Filters</Text>
           <Switch ml={2} colorScheme="teal" size="lg" onChange={onToggle} />
@@ -82,6 +80,9 @@ const SearchBar = ({ handleInputText, handleSearchSubmit, loading }) => {
                   <option value="any">Any</option>
                   <option value="dog">Dogs</option>
                   <option value="cat">Cats</option>
+                  <option value="bird">Birds</option>
+                  <option value="rabbit">Rabbits</option>
+                  <option value="hamster">Hamsters</option>
                 </Select>
               </Flex>
             )}
