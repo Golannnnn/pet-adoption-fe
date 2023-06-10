@@ -1,6 +1,6 @@
 # Frontend Pet Adoption Website
 
-This project is a frontend pet adoption website that allows users to create an account, browse pets, and perform various actions such as fostering, adopting, and saving pets to a favorites list. Administrators have additional privileges to add and edit pets and view user-pet relationships.
+This project is a frontend pet adoption website that allows users to create an account, browse pets, and perform various actions such as fostering, adopting, and saving pets to a favorites list. Administrators have additional privileges to add and edit pets and view user-pet relationships. The backend for this project can be found [here](https://github.com/Golannnnn/pet-adoption-be).
 
 ## Live Preview
 
