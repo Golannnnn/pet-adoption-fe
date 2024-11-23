@@ -4,7 +4,7 @@ This project is a frontend pet adoption website that allows users to create an a
 
 ## Live Preview
 
-You can check out the live preview [here](https://fs-pet-adoption-fe-golannnnn.vercel.app/).
+You can check out the live preview [here](https://pet-adoption-fe.onrender.com).
 
 ## Functionalities
 
