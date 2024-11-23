@@ -181,7 +181,7 @@ const Homepage = () => {
                   </Button>
                 </NavLink>
                 {!isMobile && <GrLinkNext />}
-                <NavLink to="/pets/6460b734815858363a21a3a5">
+                <NavLink to="/pets/6741e61b419fa8932d5dab56">
                   <Button
                     {...buttonStyles}
                     rightIcon={
